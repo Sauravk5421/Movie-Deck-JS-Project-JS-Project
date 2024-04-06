@@ -1,1 +1,205 @@
+*{
+    padding: 0;
+    margin: 0;
+}
 
+/* -------NavBar----------------- */
+
+nav{
+    width: 100%;
+    height: 20vh;
+    background-color: rgb(46, 43, 43);
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* ------------SearchBar----------------- */
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    justify-content: center;
+    gap: 15px;
+}
+
+#serach-text{
+    padding: 10px 60px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#search-btn{
+    padding: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(46, 43, 43);
+    border-radius: 5px;
+}
+
+/* ------------Sort Bar------------------*/
+
+.sort-bar{
+    display: flex;
+    color: black;
+    padding: 10px;
+    gap: 15px;
+    justify-content: center;
+}
+
+.sort-btn{
+    padding: 10px 40px;
+    border-radius: 5px;
+    background-color: rgb(153, 152, 152);
+    border: none;
+    font-weight: bold;
+}
+
+/* ---------option-bar-------------------- */
+
+.option-bar{
+    padding: 10px;
+    gap: 15px;
+}
+
+.option-btn{
+    padding: 10px 30px;
+    border-radius: 5px;
+    background-color: rgb(153, 152, 152);
+    border: none;
+    font-weight: bold;
+    
+}
+
+.active-tab{
+    background-color:rgb(46, 43, 43);
+    color: white;
+}
+
+/* --------MovieList Container------------- */
+
+.movie-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    /* padding: 10px;
+     */
+}
+
+
+.poster-img{
+    height: 300px;
+    /* width: 200px; */
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    object-fit:cover;
+   
+}
+
+.card-container{
+    border: 1px solid black;
+    border-radius: 5px;
+    /* background-color: rgb(241, 245, 247); */
+}
+
+.title{
+    text-align: center;
+    width: 200px;
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+.vote-count{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.voteAverage-text{
+    padding: 0 10px 10px 10px;
+}
+
+.fa-heart{
+    color: #c7c2c2;
+    cursor: pointer;
+}
+
+/* -------------Save Container---------------- */
+
+.poster-img-save{
+    height: 300px;
+    /* width: 200px; */
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    object-fit:cover;
+   
+}
+
+.save-container{
+    border: 1px solid black;
+    border-radius: 5px;
+    /* background-color: rgb(241, 245, 247); */
+}
+
+.title-save{
+    text-align: center;
+    width: 200px;
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+.vote-count-save{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.voteAverage-text-save{
+    padding: 0 10px 10px 10px;
+}
+
+
+.sort-active{
+    background-color:rgb(46, 43, 43);
+    color: #fff;
+}
+
+/* --------------Pagination---------------- */
+.pagination{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 20px;
+    gap: 15px;
+}
+
+.pagination-btn{
+    background-color: rgb(153, 152, 152);
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* ---------footer-----------------------*/
+
+
+footer{
+    background-color:rgb(46, 43, 43);
+    height: 10vh;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
