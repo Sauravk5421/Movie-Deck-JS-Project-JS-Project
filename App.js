@@ -87,6 +87,7 @@ category_option.addEventListener('click',(event)=>{
     
 })
 
+
 async function moviesData(currentPage){
     current_btn.innerHTML = `Current Page: ${currentPage}`;
     const URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=f531333d637d0c44abc85b3e74db2186&language=en-US&page=${currentPage}`;
@@ -105,17 +106,21 @@ function clearPreviesMovies() {
 
 function renderNewMovies(movieList){
     // console.log(movieList);
+    pagination.style.visibility = 'visible'; 
     if(date_sorting===true){ sortByDate(movieList); }
     if(rate_sorting===true){ sortByRate(movieList); }
     if(search_clicked==true){ movieList = search_moviename(movieList); }
 
+    if(search_clicked==true){
+        pagination.style.visibility = 'hidden'; 
+    }
     search_clicked = false;
 
     movieList.map((eachMovie)=>{
     const {id, poster, title,  vote_count, vote_average, release_date } = eachMovie;
     
     const posterPath = `https://image.tmdb.org/t/p/original/${poster}`;
-    pagination.style.visibility = 'visible'; 
+    
     movieListContainer.innerHTML += `
     <div class="card-container">
             <img class="poster-img" src=${posterPath} alt="movie_image"/>
@@ -170,6 +175,8 @@ function checkLastPage(){
         next_btn.disabled = false;
     }
 }
+
+
 
 movieListContainer.addEventListener('click',(event)=>{
     if(category.textContent==='All' && event.target.id.includes('liked-btn')){
@@ -247,6 +254,7 @@ sort_bar.addEventListener('click',(event)=>{
         } 
 })
 
+
 function sortByDate(moveList){
     moveList.sort((a, b) => {
         let dateA = new Date(a.release_date);
@@ -274,9 +282,11 @@ searchBar.addEventListener('keyup',(event)=>{
 searchBtn.addEventListener('click',()=>{
     if(currentWord==''){
         search_clicked = false;
+        pagination.style.visibility = 'visible'; 
         autoFetchMovieList();
     }else{
         search_clicked = true;
+        pagination.style.visibility = 'hidden'; 
         autoFetchMovieList();
     }
     searchBar.value = "";
@@ -305,4 +315,3 @@ movieListContainer.addEventListener('click',(e)=>{
         }
     }
 });
-
